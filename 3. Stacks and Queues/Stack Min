@@ -1,0 +1,21 @@
+'''
+Cracking the Coding Interview
+Problem Number 3.2
+Problem Name: Stack Min
+Problem Description: How would you design a stack which, in addition to push and pop, has a function min which returns the minimum element? Push, pop and min should all operate in 0(1) time.
+'''
+class Stack:
+    def __init__(self):
+        self.stack=list()
+        self.minimum=None
+    def push(self,item):
+        self.stack.append(item)
+        if self.minimum==None:
+            self.minimum=item
+        else:
+            self.minimum=min(self.minimum,item)
+    def pop(self):
+        return self.stack.pop()
+    def getmin(self):
+        return self.minimum
+
